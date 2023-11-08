@@ -4,4 +4,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [million.vite({ auto: true }), react()],
+  server: { port: 80 }
 });

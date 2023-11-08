@@ -1,6 +1,10 @@
 package models
 
+import (
+	"gorm.io/gorm"
+)
+
 type Ranks struct {
-	ID   uint
 	name string
+	gorm.Model
 }
