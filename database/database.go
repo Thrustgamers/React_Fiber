@@ -2,9 +2,7 @@ package database
 
 import (
 	"api/models"
-	"fmt"
 	"log"
-	"os"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -18,13 +16,15 @@ var Database DbInstance
 
 func ConnectToDb() {
 
-	db_user := os.Getenv("DB_USER")
-	db_host := os.Getenv("DB_HOST")
-	db_port := os.Getenv("DB_PORT")
-	db_name := os.Getenv("DB_NAME")
+	// db_user := os.Getenv("DB_USER")
+	// db_host := os.Getenv("DB_HOST")
+	// db_port := os.Getenv("DB_PORT")
+	// db_name := os.Getenv("DB_NAME")
 
-	connection := fmt.Sprintf("%s:@tcp(%s:%s)/%s", db_user, db_host, db_port, db_name)
-	db, err := gorm.Open(mysql.Open(connection), &gorm.Config{})
+	// connection := fmt.Sprintf("%s:@tcp(%s:%s)/%s", db_user, db_host, db_port, db_name)
+	//connection := "root:@tcp(127.0.0.1:3306)/inventory"
+
+	db, err := gorm.Open(mysql.Open("root:@tcp(127.0.0.1:3306)/inventory?parseTime=true&loc=America%2FNew_York"), &gorm.Config{})
 
 	if err != nil {
 		log.Fatal(err)
@@ -51,7 +51,7 @@ func ConnectToDb() {
 	// Delete - delete product
 	// db.Delete(&product, 1)
 
-	Init()
-
 	Database = DbInstance{Db: db}
+
+	Init()
 }
