@@ -5,9 +5,9 @@ import (
 )
 
 type Users struct {
-	rank       Ranks `gorm:"embedded"`
-	name       string
-	employeeId int16
-	password   string
+	Rank       Ranks  `gorm:"embedded"`
+	Name       string `json:"name"`
+	EmployeeId int16  `json:"employeeid"`
+	Password   string `json:"password"`
 	gorm.Model
 }

@@ -5,6 +5,6 @@ import (
 )
 
 type Ranks struct {
-	name string
+	Name string `json:"name"`
 	gorm.Model
 }

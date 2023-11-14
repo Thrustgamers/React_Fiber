@@ -5,7 +5,7 @@ import (
 )
 
 type Items struct {
-	name   string `json:"name"`
-	serial int64  `json:"serial"`
+	Name   string `json:"name"`
+	Serial string `json:"serial"`
 	gorm.Model
 }
