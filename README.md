@@ -22,11 +22,11 @@ This learning project consists of
 1. command inside main directory
 
 ```
-   go get
+go get
 ```
 
 2. run air inside main directory
 
 ```
-   air
+air
 ```
